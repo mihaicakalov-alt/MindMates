@@ -1,10 +1,17 @@
-﻿[
-  {
-    "name": "Самурай",
-    "images": [
-      "img/samurai1.jpg",
-      "img/samurai2.jpg",
-      "img/samurai3.jpg"
-    ]
-  }
+[
+    {
+        "name": "Sofia",
+        "description": "A futuristic AI companion who loves deep conversations.",
+        "image": "images/sofia.jpg"
+    },
+    {
+        "name": "Samurai Ronin",
+        "description": "A wandering swordsman from the past.",
+        "image": "img/samurai1.jpg"
+    },
+    {
+        "name": "Mystic Oracle",
+        "description": "Sees visions of the future and past.",
+        "image": "images/random1.jpg"
+    }
 ]

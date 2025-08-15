@@ -1,57 +1,43 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>AI Image Generator</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #111; color: #fff; text-align: center; padding: 20px; }
-        input, button { padding: 10px; margin: 5px; border-radius: 5px; border: none; }
-        button { background: #4f46e5; color: white; cursor: pointer; }
-        img { margin-top: 20px; max-width: 80%; border-radius: 10px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMates</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>? AI Image Generator</h1>
-    <input type='text' id='prompt' placeholder='Type your idea here...'>
-    <button onclick='generate()'>Generate</button>    
-    <div id='status'></div>
-    <img id='result' src=''>
+    <header>
+        <h1>MindMates</h1>
+        <p>Talk to AI characters — instantly, no setup.</p>
+    </header>
+
+    <main>
+        <div class="character-list" id="characterList"></div>
+    </main>
+
+    <footer>
+        <p>© 2025 MindMates. All rights reserved.</p>
+    </footer>
+
     <script>
-        async function generate() {
-            const prompt = document.getElementById('prompt').value;
-            const status = document.getElementById('status');
-            const resultImg = document.getElementById('result');
-
-            if (!prompt.trim()) {
-                status.textContent = 'Please enter a prompt.';
-                return;
-            }
-
-            status.textContent = '? Generating...';   
-            resultImg.src = '';
-
-            try {
-                const response = await fetch(
-                    'https://hf.space/embed/stabilityai/stable-diffusion/api/predict/',
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ data: [prompt] })
-                    }
-                );
-
-                const result = await response.json(); 
-                if (result.data && result.data[0]) {  
-                    resultImg.src = result.data[0];   
-                    status.textContent = '? Done!';   
-                } else {
-                    throw new Error('No image returned');
-                }
-            } catch (error) {
-                status.textContent = '? Error generating image.';
-            }
+        async function loadCharacters() {
+            const res = await fetch('characters.json');
+            const characters = await res.json();
+            const list = document.getElementById('characterList');
+            characters.forEach(char => {
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                card.innerHTML = `
+                    <img src="${char.image}" alt="${char.name}">
+                    <h2>${char.name}</h2>
+                    <p>${char.description}</p>
+                    <button onclick="alert('Chat with ${char.name} — Coming soon!')">Chat</button>
+                `;
+                list.appendChild(card);
+            });
         }
+        loadCharacters();
     </script>
 </body>
 </html>
