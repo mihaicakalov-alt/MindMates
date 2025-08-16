@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMates — Чат</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="p-6 bg-white shadow-md flex justify-between items-center">
+    <a href="index.html" class="text-blue-600 font-bold">← Назад</a>
+    <h1 class="text-2xl font-bold">Чат с персонажем</h1>
+  </header>
+
+  <main class="flex-grow flex flex-col p-6 max-w-3xl mx-auto w-full">
+    <div id="chat-box" class="flex-grow bg-white rounded-xl shadow p-4 overflow-y-auto mb-4">
+      <p class="text-gray-500">Начни переписку с ботом...</p>
+    </div>
+
+    <div class="flex gap-2">
+      <input id="user-input" type="text" placeholder="Напиши сообщение..." 
+             class="flex-grow px-4 py-2 border rounded-xl">
+      <button onclick="sendMessage()" 
+              class="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600">
+        Отправить
+      </button>
+    </div>
+  </main>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('user-input');
+      const chatBox = document.getElementById('chat-box');
+      if (input.value.trim() === '') return;
+
+      // добавляем сообщение пользователя
+      const userMsg = document.createElement('p');
+      userMsg.className = "text-blue-600";
+      userMsg.textContent = "Ты: " + input.value;
+      chatBox.appendChild(userMsg);
+
+      // добавляем ответ бота (пока заглушка)
+      const botMsg = document.createElement('p');
+      botMsg.className = "text-green-600";
+      botMsg.textContent = "Бот: Привет, я пока тестовый бот 🙂";
+      chatBox.appendChild(botMsg);
+
+      input.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
