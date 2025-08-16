@@ -1,43 +1,134 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMates</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMates</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .characters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .character-card {
+      background: linear-gradient(145deg, #1c1c1e, #2a2a2d);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+
+    .character-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 2px solid #ff4d6d;
+    }
+
+    .character-card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .character-card p {
+      margin: 10px 0 20px;
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .chat-btn {
+      display: inline-block;
+      background: #ff4d6d;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .chat-btn:hover {
+      background: #e33c5d;
+    }
+
+    footer {
+      padding: 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>MindMates</h1>
-        <p>Talk to AI characters — instantly, no setup.</p>
-    </header>
+  <header>
+    <h1>MindMates</h1>
+    <p>Talk to AI characters instantly, no setup.</p>
+  </header>
 
-    <main>
-        <div class="character-list" id="characterList"></div>
-    </main>
+  <main class="characters" id="characters"></main>
 
-    <footer>
-        <p>© 2025 MindMates. All rights reserved.</p>
-    </footer>
+  <footer>
+    Â© 2025 MindMates. All rights reserved.
+  </footer>
 
-    <script>
-        async function loadCharacters() {
-            const res = await fetch('characters.json');
-            const characters = await res.json();
-            const list = document.getElementById('characterList');
-            characters.forEach(char => {
-                const card = document.createElement('div');
-                card.className = 'character-card';
-                card.innerHTML = `
-                    <img src="${char.image}" alt="${char.name}">
-                    <h2>${char.name}</h2>
-                    <p>${char.description}</p>
-                    <button onclick="alert('Chat with ${char.name} — Coming soon!')">Chat</button>
-                `;
-                list.appendChild(card);
-            });
-        }
-        loadCharacters();
-    </script>
+  <script>
+    async function loadCharacters() {
+      const response = await fetch('characters.json');
+      const characters = await response.json();
+      const container = document.getElementById('characters');
+      container.innerHTML = '';
+
+      characters.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'character-card';
+        card.innerHTML = `
+          <img src="${c.avatar}" alt="${c.name}">
+          <h3>${c.name}</h3>
+          <p>${c.description}</p>
+          <a href="#" class="chat-btn">Chat</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    loadCharacters();
+  </script>
 </body>
 </html>
