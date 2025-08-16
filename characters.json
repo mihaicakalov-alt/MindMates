@@ -1,17 +1,34 @@
 [
-    {
-        "name": "Sofia",
-        "description": "A futuristic AI companion who loves deep conversations.",
-        "image": "images/sofia.jpg"
-    },
-    {
-        "name": "Samurai Ronin",
-        "description": "A wandering swordsman from the past.",
-        "image": "img/samurai1.jpg"
-    },
-    {
-        "name": "Mystic Oracle",
-        "description": "Sees visions of the future and past.",
-        "image": "images/random1.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Sofia",
+    "description": "Темная эстетика, загадочность и глубокие разговоры.",
+    "tags": ["dark", "mystic"],
+    "avatar": "images/sofia.jpg",
+    "sample": "Привет, я София. Хочешь поговорить о тайнах и смысле?"
+  },
+  {
+    "id": 2,
+    "name": "Artem",
+    "description": "Веселый и жизнерадостный собеседник, всегда поддержит беседу.",
+    "tags": ["fun", "friendly"],
+    "avatar": "images/random1.jpg",
+    "sample": "Привет! Давай обсудим что-то лёгкое и позитивное?"
+  },
+  {
+    "id": 3,
+    "name": "Mira",
+    "description": "Философская натура, любит размышлять о жизни и вселенной.",
+    "tags": ["philosophy", "deep"],
+    "avatar": "images/random2.jpg",
+    "sample": "А ты задумывался, почему люди ищут ответы в звёздах?"
+  },
+  {
+    "id": 4,
+    "name": "Kai",
+    "description": "Современный, стильный и немного дерзкий.",
+    "tags": ["modern", "bold"],
+    "avatar": "images/random3.jpg",
+    "sample": "Ну что, рискнёшь начать со мной смелый разговор?"
+  }
 ]
