@@ -1,47 +1,80 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindMates</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>🤖 MindMates</h1>
-    <p>Выбери персонажа и начни общение</p>
+<body class="bg">
+  <header class="topbar container">
+    <div class="brand">
+      <span class="logo">🤖</span>
+      <span class="name">MindMates</span>
+    </div>
+    <nav class="tagline">Говори с AI-персонажами мгновенно — без настроек</nav>
   </header>
 
-  <main class="characters">
-    <div class="card">
-      <img src="https://placekitten.com/200/200" alt="Алиса">
-      <h2>Алиса</h2>
-      <p>Твоя умная подруга</p>
-      <div class="actions">
-        <a href="chat.html?bot=alisa" class="btn">Чат</a>
-        <a href="chat.html?bot=alisa&mode=image" class="btn secondary">Генерация</a>
-      </div>
-    </div>
+  <main class="container">
+    <section class="grid">
+      <!-- Алиса -->
+      <article class="card">
+        <div class="avatar-ring">
+          <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=256&auto=format&fit=crop" alt="Алиса" />
+        </div>
+        <h3>Алиса</h3>
+        <p>Твоя умная подруга, лёгкая и поддерживающая.</p>
+        <div class="actions">
+          <a class="btn primary" href="chat.html?bot=Алиса">Чат</a>
+          <a class="btn ghost" href="chat.html?bot=Алиса&mode=image">Генерация</a>
+        </div>
+      </article>
 
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Борис">
-      <h2>Борис</h2>
-      <p>Наставник и советчик</p>
-      <div class="actions">
-        <a href="chat.html?bot=boris" class="btn">Чат</a>
-        <a href="chat.html?bot=boris&mode=image" class="btn secondary">Генерация</a>
-      </div>
-    </div>
+      <!-- Борис -->
+      <article class="card">
+        <div class="avatar-ring">
+          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=256&auto=format&fit=crop" alt="Борис" />
+        </div>
+        <h3>Борис</h3>
+        <p>Наставник, любит конкретику и практику.</p>
+        <div class="actions">
+          <a class="btn primary" href="chat.html?bot=Борис">Чат</a>
+          <a class="btn ghost" href="chat.html?bot=Борис&mode=image">Генерация</a>
+        </div>
+      </article>
 
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="София">
-      <h2>София</h2>
-      <p>Мудрая и спокойная</p>
-      <div class="actions">
-        <a href="chat.html?bot=sofia" class="btn">Чат</a>
-        <a href="chat.html?bot=sofia&mode=image" class="btn secondary">Генерация</a>
-      </div>
-    </div>
+      <!-- София -->
+      <article class="card">
+        <div class="avatar-ring">
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=256&auto=format&fit=crop" alt="София" />
+        </div>
+        <h3>София</h3>
+        <p>Спокойная философская натура, глубокие разговоры.</p>
+        <div class="actions">
+          <a class="btn primary" href="chat.html?bot=София">Чат</a>
+          <a class="btn ghost" href="chat.html?bot=София&mode=image">Генерация</a>
+        </div>
+      </article>
+
+      <!-- Кай -->
+      <article class="card">
+        <div class="avatar-ring">
+          <img src="https://images.unsplash.com/photo-1545996124-0501ebae84d0?q=80&w=256&auto=format&fit=crop" alt="Кай" />
+        </div>
+        <h3>Kai</h3>
+        <p>Стильный, дерзкий и немного футуристичный.</p>
+        <div class="actions">
+          <a class="btn primary" href="chat.html?bot=Kai">Чат</a>
+          <a class="btn ghost" href="chat.html?bot=Kai&mode=image">Генерация</a>
+        </div>
+      </article>
+    </section>
   </main>
+
+  <footer class="container footer">© <span id="year"></span> MindMates. All rights reserved.</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

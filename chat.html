@@ -1,25 +1,36 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Чат — MindMates</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="chat-page">
-  <header>
-    <a href="index.html" class="back">← Назад</a>
-    <h1 id="chat-title">Чат</h1>
+<body class="bg chat-layout">
+  <header class="topbar container">
+    <a class="back" href="index.html">← На главную</a>
+    <div class="brand">
+      <span class="logo small">💬</span>
+      <span id="chatTitle" class="name"></span>
+    </div>
+    <div></div>
   </header>
 
-  <main id="chat-box" class="chat-box">
-    <p class="system">Начни переписку...</p>
-  </main>
+  <main class="chat container">
+    <div id="history" class="history">
+      <div class="sys">Начни диалог. Я отвечу и смогу сгенерировать картинку по твоему описанию.</div>
+    </div>
 
-  <footer class="chat-input">
-    <input id="user-input" type="text" placeholder="Напиши сообщение...">
-    <button onclick="sendMessage()">➤</button>
-  </footer>
+    <div class="composer">
+      <input id="prompt" type="text" placeholder="Напиши сообщение…" />
+      <button class="btn primary" id="sendBtn">Отправить</button>
+    </div>
+
+    <div class="composer alt">
+      <input id="imgPrompt" type="text" placeholder="Опиши, какую картинку сгенерировать…" />
+      <button class="btn ghost" id="genBtn">Сгенерировать 🖼</button>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
