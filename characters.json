@@ -1,34 +1,20 @@
 [
   {
-    "id": 1,
-    "name": "Sofia",
-    "description": "Темная эстетика, загадочность и глубокие разговоры.",
-    "tags": ["dark", "mystic"],
-    "avatar": "images/sofia.jpg",
-    "sample": "Привет, я София. Хочешь поговорить о тайнах и смысле?"
+    "id": "aria",
+    "name": "Aria — Помощник",
+    "description": "Общительный помощник, который помогает писать тексты и идеи.",
+    "avatar": "https://i.pravatar.cc/150?img=32"
   },
   {
-    "id": 2,
-    "name": "Artem",
-    "description": "Веселый и жизнерадостный собеседник, всегда поддержит беседу.",
-    "tags": ["fun", "friendly"],
-    "avatar": "images/random1.jpg",
-    "sample": "Привет! Давай обсудим что-то лёгкое и позитивное?"
+    "id": "drake",
+    "name": "Drake — Исследователь",
+    "description": "Любит факты, объясняет сложное простыми словами.",
+    "avatar": "https://i.pravatar.cc/150?img=12"
   },
   {
-    "id": 3,
-    "name": "Mira",
-    "description": "Философская натура, любит размышлять о жизни и вселенной.",
-    "tags": ["philosophy", "deep"],
-    "avatar": "images/random2.jpg",
-    "sample": "А ты задумывался, почему люди ищут ответы в звёздах?"
-  },
-  {
-    "id": 4,
-    "name": "Kai",
-    "description": "Современный, стильный и немного дерзкий.",
-    "tags": ["modern", "bold"],
-    "avatar": "images/random3.jpg",
-    "sample": "Ну что, рискнёшь начать со мной смелый разговор?"
+    "id": "nova",
+    "name": "Nova — Сказочник",
+    "description": "Генерирует истории и диалоги в стиле фантастики.",
+    "avatar": "https://i.pravatar.cc/150?img=48"
   }
 ]

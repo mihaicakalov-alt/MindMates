@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Чат | MindMates</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>💬 Чат с персонажем</h1>
+    <a href="index.html" class="back-btn">← Назад</a>
+  </header>
+
+  <main class="chat-container">
+    <div id="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Напиши сообщение...">
+      <button onclick="sendMessage()">Отправить</button>
+    </div>
+  </main>
+
+  <script>
+    const chatBox = document.getElementById("chat-box");
+
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      if (!input.value.trim()) return;
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "msg user";
+      userMsg.innerText = input.value;
+      chatBox.appendChild(userMsg);
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "msg bot";
+      botMsg.innerText = "🤖 " + getBotReply(input.value);
+      chatBox.appendChild(botMsg);
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function getBotReply(message) {
+      const replies = [
+        "Я тебя понимаю 👌",
+        "Интересная мысль!",
+        "Расскажи подробнее 🤔",
+        "Это звучит здорово 😎",
+        "Я рядом, продолжай ✨"
+      ];
+      return replies[Math.floor(Math.random() * replies.length)];
+    }
+  </script>
+</body>
+</html>
