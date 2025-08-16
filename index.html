@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindMates</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем Tailwind через CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-blue-50 to-purple-100 min-h-screen flex flex-col">
-  <header class="p-4 bg-white shadow-md">
+  <header class="p-6 bg-white shadow-md">
     <h1 class="text-3xl font-bold text-center">MindMates 🤖</h1>
     <p class="text-center text-gray-600">Выбери персонажа и начни общение</p>
   </header>
 
   <main class="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-    <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center">
+    <!-- Карточка 1 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
       <img src="https://placekitten.com/200/200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
       <h2 class="text-xl font-bold">Алиса</h2>
       <p class="text-gray-500 mb-4">Твоя умная подруга</p>
@@ -23,7 +25,8 @@
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center">
+    <!-- Карточка 2 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
       <img src="https://placebear.com/200/200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
       <h2 class="text-xl font-bold">Борис</h2>
       <p class="text-gray-500 mb-4">Наставник и советчик</p>
@@ -33,7 +36,8 @@
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center">
+    <!-- Карточка 3 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
       <img src="https://placebeard.it/200x200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
       <h2 class="text-xl font-bold">София</h2>
       <p class="text-gray-500 mb-4">Мудрая и спокойная</p>
