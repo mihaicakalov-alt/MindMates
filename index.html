@@ -4,46 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindMates</title>
-  <!-- Подключаем Tailwind через CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-r from-blue-50 to-purple-100 min-h-screen flex flex-col">
-  <header class="p-6 bg-white shadow-md">
-    <h1 class="text-3xl font-bold text-center">MindMates 🤖</h1>
-    <p class="text-center text-gray-600">Выбери персонажа и начни общение</p>
+<body>
+  <header>
+    <h1>🤖 MindMates</h1>
+    <p>Выбери персонажа и начни общение</p>
   </header>
 
-  <main class="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-    <!-- Карточка 1 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
-      <img src="https://placekitten.com/200/200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
-      <h2 class="text-xl font-bold">Алиса</h2>
-      <p class="text-gray-500 mb-4">Твоя умная подруга</p>
-      <div class="flex gap-2">
-        <a href="chat.html" class="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600">Чат</a>
-        <a href="chat.html#image" class="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600">Генерация</a>
+  <main class="characters">
+    <div class="card">
+      <img src="https://placekitten.com/200/200" alt="Алиса">
+      <h2>Алиса</h2>
+      <p>Твоя умная подруга</p>
+      <div class="actions">
+        <a href="chat.html?bot=alisa" class="btn">Чат</a>
+        <a href="chat.html?bot=alisa&mode=image" class="btn secondary">Генерация</a>
       </div>
     </div>
 
-    <!-- Карточка 2 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
-      <img src="https://placebear.com/200/200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
-      <h2 class="text-xl font-bold">Борис</h2>
-      <p class="text-gray-500 mb-4">Наставник и советчик</p>
-      <div class="flex gap-2">
-        <a href="chat.html" class="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600">Чат</a>
-        <a href="chat.html#image" class="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600">Генерация</a>
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Борис">
+      <h2>Борис</h2>
+      <p>Наставник и советчик</p>
+      <div class="actions">
+        <a href="chat.html?bot=boris" class="btn">Чат</a>
+        <a href="chat.html?bot=boris&mode=image" class="btn secondary">Генерация</a>
       </div>
     </div>
 
-    <!-- Карточка 3 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition">
-      <img src="https://placebeard.it/200x200" alt="Bot Avatar" class="w-32 h-32 rounded-full shadow mb-4">
-      <h2 class="text-xl font-bold">София</h2>
-      <p class="text-gray-500 mb-4">Мудрая и спокойная</p>
-      <div class="flex gap-2">
-        <a href="chat.html" class="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600">Чат</a>
-        <a href="chat.html#image" class="px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600">Генерация</a>
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="София">
+      <h2>София</h2>
+      <p>Мудрая и спокойная</p>
+      <div class="actions">
+        <a href="chat.html?bot=sofia" class="btn">Чат</a>
+        <a href="chat.html?bot=sofia&mode=image" class="btn secondary">Генерация</a>
       </div>
     </div>
   </main>
