@@ -1,0 +1,17 @@
+﻿[
+  {
+    "name": "Анна",
+    "description": "Дружелюбный собеседник, всегда поддержит.",
+    "img": "https://i.ibb.co/3fJrD7n/sample1.jpg"
+  },
+  {
+    "name": "Макс",
+    "description": "Поможет советом и поднимет настроение.",
+    "img": "https://i.ibb.co/b7s1n7V/sample2.jpg"
+  },
+  {
+    "name": "Лена",
+    "description": "Умеет слушать и понимает с полуслова.",
+    "img": "https://i.ibb.co/0jX9t5M/sample3.jpg"
+  }
+]
